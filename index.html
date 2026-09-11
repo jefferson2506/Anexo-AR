@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Anexos</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.2.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Generador de Anexos fotográficos</h1>
+  <p>Carga dos imágenes por cada anexo (1 al 4), agrega la descripción y genera el documento en Word y PDF con el mismo estilo, márgenes y tipografía del formato original. Cada foto se ve completa (sin recortes) ajustada a un rectángulo, y los dos anexos de cada hoja ocupan toda la página.</p>
+</header>
+
+<main id="anexos-container"></main>
+
+<div class="footer-card" style="max-width:900px;margin:0 auto;">
+  <div class="field">
+    <label for="filename">Nombre del archivo</label>
+    <input type="text" id="filename" placeholder="Ej: Anexos_Jefferson_Ari_Hilasaca">
+  </div>
+  <button class="generate" id="generateBtn">Generar Anexo (Word / PDF)</button>
+</div>
+
+<div id="status"></div>
+
+<footer class="note">
+  El PDF se genera de forma independiente al Word (misma página A4, mismos márgenes, tipografía e imágenes) para que ambos coincidan visualmente, ya que la conversión real de .docx a .pdf requiere un motor de oficina que no está disponible dentro del navegador. Al abrir el .docx en Word y exportarlo a PDF obtendrás un resultado prácticamente idéntico al PDF descargado aquí.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
